@@ -44,6 +44,11 @@
             border-radius: 2.5rem;
         }
 
+        .logo {
+            color: white;
+            text-align: center;
+        }
+
         .btnSubmit {
             width: 50%;
             border-radius: 1rem;
@@ -61,10 +66,13 @@
 
 <body>
     <div class="container register">
+        
         <div class="row">
-            <div class="col-md-12">
+            
+            <div class="col-md-12"> <h1 class="logo">APOSTOLIC COMRADES</h1>
                 <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel"
                     aria-labelledby="home-tab">
+                    
                     <h3 class="register-heading text-nowrap">Membership Fill-Up Form</h3>
                     <div class="row register-form">
                         <div class="col-md-12">
@@ -95,16 +103,14 @@
                                         placeholder="Your Contact Number *" value="" required="" />
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" id="town">
-                                        <option>Select Location *</option>
-                                        <option>Harare</option>
-                                        <option>Bulawayo</option>
-                                        <option>Masvingo</option>
-                                        <option>Gweru</option>
-                                        <option>Mutare</option>
-                                        <option>Chiredzi</option>
-                                    </select>
+                                    <input type="text" name="Town" id="town" class="form-control"
+                                        placeholder="Your Town *" value="" required="" />
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" name="Country" id="country" class="form-control"
+                                        placeholder="Your Country *" value="" required="" />
+                                </div>
+
                                 <div class="form-group">
                                     <input type="button" name="submit" class="btnSubmit btn-block" onclick="gotowhatsapp()" value="Submit" />
                                 </div>
@@ -129,15 +135,17 @@
         var phone = document.getElementById("phone").value;
         var email = document.getElementById("email").value;
         var town = document.getElementById("town").value;
+        var country = document.getElementById("country").value;
     
-        var url = "https://wa.me/263785052149?text=" 
+        var url = "https://wa.me/263776678042?text=" 
         + "*Name:* " + name + "%0a"
         + "*Surname:* " + surname + "%0a"
         + "*Age:* " + age + "%0a"
         + "*Gender:* " + gender + "%0a"
         + "*Phone:* " + phone + "%0a"
         + "*Email:* " + email  + "%0a"
-        + "*Town:* " + town; 
+        + "*Town:* " + town   + "%0a" 
+        + "*Country:* " + country;
     
         window.open(url, '_blank').focus();
     }
